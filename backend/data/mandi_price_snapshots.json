@@ -1,0 +1,73 @@
+{
+  "_metadata": {
+    "data_status": "HISTORICAL_BENCHMARK_MANDI_PRICES",
+    "description": "Daily modal Mandi wholesale price benchmarks across major APMC markets (Agmarknet).",
+    "attribution": "Agmarknet / Ministry of Agriculture & Farmers Welfare (data.gov.in)",
+    "offline_fallback_level": "Level 2 Cached Snapshot Fallback"
+  },
+  "commodities": {
+    "Tomato": {
+      "unit": "INR / quintal (100 kg)",
+      "benchmark_price_per_kg": 24.50,
+      "daily_volatility_sigma": 0.18,
+      "markets": {
+        "Dindigul_APMC": {"modal_price_per_kg": 24.00, "min_price": 20.00, "max_price": 28.00, "arrival_tonnes": 45.0},
+        "Kolar_APMC": {"modal_price_per_kg": 26.50, "min_price": 22.00, "max_price": 31.00, "arrival_tonnes": 120.0},
+        "Madanapalle_APMC": {"modal_price_per_kg": 25.00, "min_price": 21.00, "max_price": 29.50, "arrival_tonnes": 85.0}
+      },
+      "grade_multipliers": {
+        "Grade_A_Premium": 1.15,
+        "Grade_B_Processing_Standard": 1.00,
+        "Grade_C_Substandard": 0.70,
+        "Rejected": 0.00
+      }
+    },
+    "Onion": {
+      "unit": "INR / quintal (100 kg)",
+      "benchmark_price_per_kg": 28.00,
+      "daily_volatility_sigma": 0.12,
+      "markets": {
+        "Lasalgaon_APMC": {"modal_price_per_kg": 28.50, "min_price": 24.00, "max_price": 33.00, "arrival_tonnes": 350.0},
+        "Nashik_APMC": {"modal_price_per_kg": 27.50, "min_price": 23.50, "max_price": 32.00, "arrival_tonnes": 210.0},
+        "Dindigul_APMC": {"modal_price_per_kg": 30.00, "min_price": 26.00, "max_price": 35.00, "arrival_tonnes": 30.0}
+      },
+      "grade_multipliers": {
+        "Grade_A_Premium": 1.12,
+        "Grade_B_Processing_Standard": 1.00,
+        "Grade_C_Substandard": 0.75,
+        "Rejected": 0.00
+      }
+    },
+    "Potato": {
+      "unit": "INR / quintal (100 kg)",
+      "benchmark_price_per_kg": 18.50,
+      "daily_volatility_sigma": 0.08,
+      "markets": {
+        "Agra_APMC": {"modal_price_per_kg": 17.50, "min_price": 15.00, "max_price": 20.00, "arrival_tonnes": 400.0},
+        "Hassan_APMC": {"modal_price_per_kg": 19.50, "min_price": 17.00, "max_price": 22.00, "arrival_tonnes": 80.0},
+        "Kolar_APMC": {"modal_price_per_kg": 19.00, "min_price": 16.50, "max_price": 21.50, "arrival_tonnes": 60.0}
+      },
+      "grade_multipliers": {
+        "Grade_A_Premium": 1.10,
+        "Grade_B_Processing_Standard": 1.00,
+        "Grade_C_Substandard": 0.75,
+        "Rejected": 0.00
+      }
+    },
+    "Mango": {
+      "unit": "INR / quintal (100 kg)",
+      "benchmark_price_per_kg": 42.00,
+      "daily_volatility_sigma": 0.22,
+      "markets": {
+        "Krishnagiri_APMC": {"modal_price_per_kg": 40.00, "min_price": 32.00, "max_price": 48.00, "arrival_tonnes": 75.0},
+        "Srinivaspur_APMC": {"modal_price_per_kg": 44.00, "min_price": 35.00, "max_price": 52.00, "arrival_tonnes": 90.0}
+      },
+      "grade_multipliers": {
+        "Grade_A_Premium": 1.20,
+        "Grade_B_Processing_Standard": 1.00,
+        "Grade_C_Substandard": 0.65,
+        "Rejected": 0.00
+      }
+    }
+  }
+}

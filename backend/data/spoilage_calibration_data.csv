@@ -1,0 +1,22 @@
+# DATA STATUS: ASSUMED / SYNTHETIC CALIBRATION DATA
+# NOT FIELD-GROUNDED GROUND TRUTH
+# Used only for model prototyping and sensitivity testing.
+crop,maturity_stage,temperature_c,relative_humidity_pct,storage_days,transport_hours,observed_spoilage_pct,data_status,source_citation
+Tomato,Immature,20.0,85.0,2.0,6.0,3.2,ASSUMED_SYNTHETIC,USDA Handbook 66 baseline projection
+Tomato,Immature,30.0,85.0,2.0,6.0,7.8,ASSUMED_SYNTHETIC,Arrhenius temperature acceleration model
+Tomato,Optimal,20.0,85.0,2.0,6.0,5.1,ASSUMED_SYNTHETIC,USDA Handbook 66 baseline projection
+Tomato,Optimal,30.0,85.0,2.0,6.0,12.4,ASSUMED_SYNTHETIC,Arrhenius temperature acceleration model
+Tomato,Optimal,38.0,92.0,3.0,12.0,34.6,ASSUMED_SYNTHETIC,Simulated South India heatwave condition
+Tomato,Ripe,25.0,80.0,1.0,8.0,14.2,ASSUMED_SYNTHETIC,Literature respiration curve estimate
+Tomato,Ripe,35.0,88.0,3.0,18.0,52.8,ASSUMED_SYNTHETIC,Simulated high-spoilage transit corridor
+Tomato,Overripe,32.0,90.0,2.0,12.0,78.5,ASSUMED_SYNTHETIC,Simulated extreme rejection threshold
+Onion,Immature,22.0,65.0,15.0,24.0,2.5,ASSUMED_SYNTHETIC,ICAR-DOGR storage guide baseline
+Onion,Optimal,22.0,65.0,30.0,24.0,4.8,ASSUMED_SYNTHETIC,ICAR-DOGR storage guide baseline
+Onion,Optimal,35.0,85.0,15.0,48.0,18.2,ASSUMED_SYNTHETIC,High humidity rotting simulation
+Onion,Ripe,28.0,70.0,20.0,24.0,7.9,ASSUMED_SYNTHETIC,Post-curing loss model
+Potato,Optimal,18.0,85.0,30.0,24.0,3.1,ASSUMED_SYNTHETIC,CPRI Shimla storage benchmark
+Potato,Optimal,32.0,80.0,15.0,48.0,14.5,ASSUMED_SYNTHETIC,Ambient transit heat exposure
+Mango,Immature,22.0,85.0,4.0,12.0,4.2,ASSUMED_SYNTHETIC,FAO Bull 151 ripening estimate
+Mango,Optimal,28.0,85.0,3.0,12.0,11.8,ASSUMED_SYNTHETIC,FAO Bull 151 ripening estimate
+Mango,Ripe,34.0,90.0,3.0,18.0,46.5,ASSUMED_SYNTHETIC,Rapid decay simulation
+Mango,Overripe,35.0,92.0,4.0,24.0,92.0,ASSUMED_SYNTHETIC,Extreme spoilage failure case
