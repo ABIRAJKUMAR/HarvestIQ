@@ -23,11 +23,14 @@ class MonteCarloEngine:
         transit_distance_km: float = 100.0,
         delay_days: int = 0,
         is_cold_storage: bool = False,
+        include_breakdown_scenario: bool = True,
+        breakdown_probability: float = 0.04,
         num_iterations: int = 1000,
         simulation_seed: Optional[int] = 42
     ) -> Dict[str, Any]:
         """
-        Runs stochastic Monte Carlo simulation across weather fluctuations, transit delays, and price movements.
+        Runs stochastic Monte Carlo simulation across weather fluctuations,
+        realistic transit delay variances (road conditions, vehicle breakdown scenarios), and price movements.
         """
         rng = np.random.default_rng(simulation_seed if simulation_seed is not None else 42)
         
@@ -35,8 +38,18 @@ class MonteCarloEngine:
         temp_samples = rng.normal(loc=temperature_c, scale=1.5, size=num_iterations)
         temp_samples = np.clip(temp_samples, a_min=5.0, a_max=55.0)
         
-        # 2. Stochastic transit delay variation (+/- 25% traffic / road condition variation)
-        transit_hour_samples = rng.normal(loc=transport_hours, scale=transport_hours * 0.20, size=num_iterations)
+        # 2. Stochastic transit delay variation (Log-normal road condition / traffic dispersion)
+        # Log-normal distribution prevents negative transit times and models right-skewed traffic bottlenecks
+        road_delay_multipliers = rng.lognormal(mean=0.0, sigma=0.18, size=num_iterations)
+        transit_hour_samples = transport_hours * road_delay_multipliers
+        
+        # Vehicle breakdown scenario modeling (e.g., flat tire, radiator overheating, mechanical delay)
+        if include_breakdown_scenario and breakdown_probability > 0.0:
+            breakdown_occurs = rng.random(size=num_iterations) < breakdown_probability
+            # Breakdown adds 3.5 to 8.5 hours of delay
+            breakdown_delays = rng.uniform(3.5, 8.5, size=num_iterations) * breakdown_occurs
+            transit_hour_samples += breakdown_delays
+
         transit_hour_samples = np.clip(transit_hour_samples, a_min=1.0, a_max=72.0)
         
         # 3. Total effective exposure days (including harvest delay)

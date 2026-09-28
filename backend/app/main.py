@@ -12,6 +12,8 @@ from app.api.routes_analyze import router as analyze_router
 from app.api.routes_data import router as data_router
 from app.api.routes_history import router as history_router
 from app.api.routes_baseline import router as baseline_router
+from app.api.routes_routing import router as routing_router
+from app.api.routes_iot import router as iot_router
 
 # Ensure tables are created on module import
 init_db()
@@ -42,6 +44,8 @@ app.include_router(analyze_router)
 app.include_router(data_router)
 app.include_router(history_router)
 app.include_router(baseline_router)
+app.include_router(routing_router)
+app.include_router(iot_router)
 
 @app.get("/api/health", tags=["System"])
 def health_check():
@@ -52,5 +56,12 @@ def health_check():
         "model_version": settings.MODEL_VERSION,
         "parameter_version": settings.PARAMETER_VERSION,
         "database": "SQLite (Connected)",
-        "offline_ready": True
+        "offline_ready": True,
+        "phase_2_modules": {
+            "osrm_routing_engine": "ACTIVE",
+            "iot_telemetry_streaming": "ACTIVE",
+            "agmarknet_timeseries": "ACTIVE",
+            "ci_cd_docker_pipeline": "CONFIGURED"
+        }
     }
+
